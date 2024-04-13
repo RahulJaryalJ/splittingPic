@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/splitting/dist/splitting-cells.css">
+    <link rel="stylesheet" href="../node_modules/splitting/dist/splitting.css">
+    <style>
+        body {
+            background-color: darkcyan;
+        }
+
+        .wrapper {
+            display: flex;
+            gap: 1rem;
+            width: 1170px;
+            margin: 12% auto;
+        }
+
+        /* .single-img {
+            width: 30%;
+            margin: 0 10px;
+        } */
+
+         .img-area {
+            perspective: 100px;
+        }
+
+        .img-area .cell {
+            transform-style: preserve-3d;
+            transition: transform 4s cubic-bezier(.35, .33, 0, 1.5);
+            transition-delay: .1s;
+            animation-delay: .3s;
+        }
+
+        .img-area:hover .cell {
+            transform: rotateY(180deg)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="single-image">
+            <div class="img-area" data-splitting="cells" data-columns="3" data-rows="4" data-image="true">
+                <img src="https://images.pexels.com/photos/20432595/pexels-photo-20432595/free-photo-of-a-woman-with-glasses-on-smiling.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+            </div>
+        </div>
+        <div class="single-image">
+            <div class="img-area" data-splitting="cells" data-columns="4" data-rows="1" data-image="true">
+                <img src="https://images.pexels.com/photos/19922061/pexels-photo-19922061/free-photo-of-lands-end.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+            </div>
+        </div>
+        <div class="single-image">
+            <div class="img-area" data-splitting="cells" data-columns="4" data-rows="1" data-image="true">
+                <img src="https://images.pexels.com/photos/20511145/pexels-photo-20511145/free-photo-of-a-woman-with-long-hair-and-a-white-sweater.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+            </div>
+        </div>
+    </div>
+    <!-- <h1 data-splitting>Split by chars (default)</h1>
+    <p data-splitting="words">Split by words</p>
+    <ul data-splitting="items">
+      <li>Split</li>
+      <li>by</li>
+      <li>children!</li>
+    </ul>
+     -->
+</body>
+<script src="../node_modules/splitting/dist/splitting.min.js"></script>
+<script>
+    Splitting(); 
+</script>
+
+</html>
